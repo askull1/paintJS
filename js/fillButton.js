@@ -8,9 +8,18 @@ function handleModeClick() {
   } else {
     filling = true;
     mode.innerText = "PAINT"
+    ctx.fillStyle = ctx.strokeStyle;
+  }
+}
+function handleCanvasClick() {
+  if(filling) {
+    ctx.fillRect(0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
   }
 }
 
 if (mode) {
   mode.addEventListener("click",handleModeClick)
+}
+if (canvas) {
+  canvas.addEventListener("click",handleCanvasClick);
 }
